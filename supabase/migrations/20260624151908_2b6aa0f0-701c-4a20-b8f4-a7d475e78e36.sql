@@ -1,0 +1,2 @@
+ALTER TABLE public.webchat_messages DROP CONSTRAINT IF EXISTS webchat_messages_content_type_check;
+ALTER TABLE public.webchat_messages ADD CONSTRAINT webchat_messages_content_type_check CHECK (content_type IN ('text','image','audio','video','file','document','sticker','contact','location','template'));

@@ -1,0 +1,1 @@
+ALTER TABLE public.voice_agents ADD COLUMN IF NOT EXISTS appearance jsonb NOT NULL DEFAULT '{}'::jsonb;

@@ -1,0 +1,2 @@
+ALTER TABLE public.sector_members DROP CONSTRAINT IF EXISTS sector_members_user_id_profiles_fkey;
+ALTER TABLE public.conversation_notes DROP CONSTRAINT IF EXISTS conversation_notes_user_id_profiles_fkey;

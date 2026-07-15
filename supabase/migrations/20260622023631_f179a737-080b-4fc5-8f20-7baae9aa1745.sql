@@ -1,0 +1,1 @@
+ALTER TABLE public.mia_actions REPLICA IDENTITY FULL;

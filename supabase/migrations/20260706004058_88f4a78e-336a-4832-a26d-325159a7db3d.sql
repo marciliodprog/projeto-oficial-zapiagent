@@ -1,0 +1,2 @@
+ALTER TABLE public.org_ai_credentials DROP CONSTRAINT IF EXISTS org_ai_credentials_provider_check;
+ALTER TABLE public.org_ai_credentials ADD CONSTRAINT org_ai_credentials_provider_check CHECK (provider IN ('openai','anthropic','gemini','xai'));

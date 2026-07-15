@@ -1,0 +1,1 @@
+ALTER TABLE public.instagram_webhook_logs ADD COLUMN IF NOT EXISTS payload_summary jsonb;

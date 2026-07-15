@@ -1,0 +1,3 @@
+UPDATE public.onboarding_submissions SET status='submitted', applied_at=NULL, applied_by=NULL, applied_refs='{}'::jsonb, error_message=NULL WHERE id='0d1bfe68-772f-4bd3-b124-b271557dce5c';
+UPDATE public.organizations SET onboarding_locked=false, onboarding_completed_at=NULL WHERE id='966a6283-69aa-4383-be72-471e391ce3ce';
+DELETE FROM public.product_agents WHERE id='143f9c8b-03fc-4c29-9d8f-3746a0ba07f5';

@@ -1,0 +1,1 @@
+UPDATE call_logs SET status='completed', ended_at=COALESCE(ended_at, now()), duration_sec=COALESCE(duration_sec, EXTRACT(EPOCH FROM (now() - started_at))::int) WHERE status IN ('initiated','ringing','in_call') AND started_at < now() - interval '10 minutes';

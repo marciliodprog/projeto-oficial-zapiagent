@@ -1,0 +1,1 @@
+ALTER TABLE public.instagram_flows ALTER COLUMN throttle_per_sender_hours SET DEFAULT 1;
