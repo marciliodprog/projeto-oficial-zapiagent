@@ -398,11 +398,28 @@ delas criptografada com a chave-mestre guardada em `platform_settings`.
 
 ---
 
-## 9. Roteiro de migração (checklist)
+## 9. Contas de Super Admin
+
+Papéis em `public.user_roles` (nunca em `profiles`). Ambas as contas abaixo têm
+`super_admin` + `admin` e estão com e-mail confirmado.
+
+| E-mail | Nome | Papéis | Observação |
+|---|---|---|---|
+| admzapyer@gmail.com | Marcilio Barros | super_admin, admin | Conta original |
+| marciliobarrosdev@gmail.com | Marcílio Barros | super_admin, admin | Criada em 2026-09-15 (id `a1edfe7a-a78c-4389-8ba3-c33fc18d3e15`) |
+
+As senhas ficam criptografadas em `auth.users` e não são recuperáveis em texto —
+não devem ser anotadas aqui. Em uma migração, importe `auth.users` (que já leva os
+hashes) ou refaça o acesso por "Esqueci minha senha". Depois confirme que as linhas
+correspondentes existem em `profiles` e `user_roles`.
+
+---
+
+## 10. Roteiro de migração (checklist)
 
 1. **Código** — repositório Git sincronizado (este projeto).
 2. **Estrutura** — aplicar `docs/DATABASE_SNAPSHOT.sql` no banco destino.
-3. **Usuários** — exportar/importar `auth.users` e depois `profiles`, `user_roles`, `user_organizations`, `user_permissions`.
+3. **Usuários** — exportar/importar `auth.users` e depois `profiles`, `user_roles`, `user_organizations`, `user_permissions` (inclui os Super Admins da seção 9).
 4. **Dados** — importar as demais tabelas conforme a seção 7.
 5. **Arquivos** — copiar os 17 buckets da seção 6 preservando os caminhos.
 6. **Segredos** — recadastrar as credenciais da seção 8.
@@ -413,7 +430,7 @@ delas criptografada com a chave-mestre guardada em `platform_settings`.
 
 ---
 
-## 10. Como regenerar este snapshot
+## 11. Como regenerar este snapshot
 
 ```bash
 pg_dump "$SUPABASE_DB_URL" --schema-only --no-owner --schema=public -f docs/DATABASE_SNAPSHOT.sql
