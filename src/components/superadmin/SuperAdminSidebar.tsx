@@ -182,7 +182,7 @@ function SidebarContent({ activeSection, onSectionChange, onNavigate }: SidebarC
         </Button>
         
         <div className="flex items-center justify-between px-3 py-2">
-          <span className="text-xs text-muted-foreground">v1.0</span>
+          <span className="text-xs text-muted-foreground">v.5.0</span>
           <Button
             variant="ghost"
             size="icon"
